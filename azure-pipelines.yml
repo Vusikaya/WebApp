@@ -14,17 +14,13 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
-- task: UseDotNet@2
-  inputs:
+task: UseDotNet@2
+inputs:
     packageType: 'sdk'
     version: '6.x'
 
 steps:
 - task: NuGetToolInstaller@1
-
-- task: NuGetCommand@2
-  inputs:
-    restoreSolution: '$(solution)'
 
 - task: DotNetCoreCLI@2
   displayName: Build
